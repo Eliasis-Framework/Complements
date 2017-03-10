@@ -11,33 +11,33 @@
 
 ---
 
-### Módulos disponibles
+## Módulos disponibles
 
 | Módulo | Descripción |
 | --- | --- |
 | [fork-me-github](https://github.com/Eliasis-Framework/fork-me-github) | Agrega tira 'Fork me on GitHub' en la parte superior de la página. |
 
-### Crear módulo
+## Crear módulo
 
 La estructura y configuración para crear un módulo básico para [Eliasis PHP Framework](https://github.com/eliasis-framework/eliasis) es la siguiente:
 
 **Estructura**
 
-Crea un directorio con el nombre del módulo. Para este ejemplo nuestro módulo se llamará `my-custom-module`:
+**Crea un directorio con el nombre del módulo. Para este ejemplo nuestro módulo se llamará `my-custom-module`**:
 
     $ mkdir my-custom-module
 
-Accede al directorio creado:
+**Accede al directorio creado**:
 
     $ cd my-custom-module/
 
-Crea los directorios del módulo:
+**Crea los directorios del módulo**:
 
     $ mkdir assets/ assets/css config/ src/ src/Controller/ src/template/
 
-**Contenido**
+### Contenido
 
-Crea el archivo de configuración del módulo.
+**Crea el archivo de configuración del módulo**.
 
 	$ nano my-custom-module.php 
 
@@ -57,7 +57,7 @@ return [
 ];
 ```
 
-Añade las rutas o los hooks de tu módulo.
+**Añade las rutas o los hooks de tu módulo**.
 
 	$ nano src/Hooks.php 
 
@@ -111,7 +111,7 @@ class Routes {
 }
 ```
 
-Crea el archivo para el controlador principal del módulo.
+**Crea el archivo para el controlador principal del módulo**.
 
 	$ nano src/Controller/MyCustomModule.php 
 
@@ -140,7 +140,7 @@ class ForkMeGitHub extends Controller {
 }
 ```
 
-Crea el archivo para los estilos.
+**Crea el archivo para los estilos**.
 
 	$ nano assets/css/style.css
 
@@ -150,7 +150,7 @@ Crea el archivo para los estilos.
 }
 ```
 
-Crea el archivo para la vista.
+**Crea el archivo para la vista**.
 
 	$ nano src/template/view/hello.php
 
@@ -158,7 +158,7 @@ Crea el archivo para la vista.
 <p class="color">Hello world</p>
 ```
 
-Finalmente crea el archivo de configuración para poder instalar tu plugin desde Composer.
+**Finalmente crea el archivo de configuración para poder instalar tu plugin desde Composer**.
 
 	$ nano composer.json
 
@@ -181,14 +181,14 @@ Finalmente crea el archivo de configuración para poder instalar tu plugin desde
 
 ```
 
-### Contribuir
+## Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
 1. Bifurca la rama del repositorio en GitHub para iniciar la operación de ajuste.
 1. Escribe una o más pruebas para la nueva característica o expón el error.
 1. Haz cambios en el código para implementar la característica o reparar el fallo.
 1. Envía pull request para fusionar los cambios y que sean publicados.
 
-### Copyright
+## Copyright
 
 2017 Josantonius, [josantonius.com](https://josantonius.com/)
 

@@ -11,33 +11,33 @@
 
 ---
 
-### Available Modules
+## Available Modules
 
 | Module | Description|
 | --- | --- |
 | [fork-me-github](https://github.com/Eliasis-Framework/fork-me-github) | Add a strip 'Fork me on GitHub' at the top of the page. |
 
-### Create module
+## Create module
 
 The structure and configuration to create a basic module for [Eliasis PHP Framework](https://github.com/eliasis-framework/eliasis) is the next:
 
-## Skeleton
+### Skeleton
 
 **Create a directory with the module name. For this example our module will be called `my-custom-module`**:
 
     $ mkdir my-custom-module
 
-Access the created directory:
+**Access the created directory**:
 
     $ cd my-custom-module/
 
-Create the module directories:
+**Create module directories**:
 
     $ mkdir assets/ assets/css config/ src/ src/Controller/ src/template/
 
-**Content**
+### Content
 
-Create the module configuration file.
+**Create module configuration file**.
 
 	$ nano my-custom-module.php 
 
@@ -57,7 +57,7 @@ return [
 ];
 ```
 
-Add the routes or hooks of your module.
+**Add the routes or hooks of your module**.
 
 	$ nano src/Hooks.php 
 
@@ -113,7 +113,7 @@ class Routes {
 }
 ```
 
-Create the main file of the module.
+**Create the main file of the module**.
 
 	$ nano src/Controller/MyCustomModule.php 
 
@@ -142,7 +142,7 @@ class ForkMeGitHub extends Controller {
 }
 ```
 
-Create the file for styles.
+**Create the file for styles**.
 
 	$ nano assets/css/style.css
 
@@ -152,7 +152,7 @@ Create the file for styles.
 }
 ```
 
-Create the view file.
+**Create the view file**.
 
 	$ nano src/template/view/hello.php
 
@@ -160,7 +160,7 @@ Create the view file.
 <p class="color">Hello world</p>
 ```
 
-Finally create the configuration file to be able to install your plugin from Composer.
+**Finally create the configuration file to be able to install your plugin from Composer**.
 
 	$ nano composer.json
 
@@ -183,7 +183,7 @@ Finally create the configuration file to be able to install your plugin from Com
 
 ```
 
-### Contribute
+## Contribute
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
 1. Fork the repository on GitHub to start making your changes.
 1. Write one or more tests for the new feature or that expose the bug.
@@ -192,7 +192,7 @@ Finally create the configuration file to be able to install your plugin from Com
 
 This is intended for large and long-lived objects.
 
-### Copyright
+## Copyright
 
 2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
