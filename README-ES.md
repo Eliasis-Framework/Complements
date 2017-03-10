@@ -1,4 +1,4 @@
-# Eliasis PHP Framework modules
+# Módulos para Eliasis PHP Framework
 
 [English version](README-ES.md)
 
@@ -37,7 +37,7 @@ La estructura y configuración para crear un módulo básico para [Eliasis PHP F
 
 ### Contenido
 
-**Crea el archivo de configuración del módulo**.
+**Crea el archivo de configuración del módulo**:
 
 	$ nano my-custom-module.php 
 
@@ -57,7 +57,7 @@ return [
 ];
 ```
 
-**Añade las rutas o los hooks de tu módulo**.
+**Añade las rutas o los hooks de tu módulo**:
 
 	$ nano src/Hooks.php 
 
@@ -111,7 +111,7 @@ class Routes {
 }
 ```
 
-**Crea el archivo para el controlador principal del módulo**.
+**Crea el archivo para el controlador principal del módulo**:
 
 	$ nano src/Controller/MyCustomModule.php 
 
@@ -140,7 +140,7 @@ class ForkMeGitHub extends Controller {
 }
 ```
 
-**Crea el archivo para los estilos**.
+**Crea el archivo para los estilos**:
 
 	$ nano assets/css/style.css
 
@@ -150,7 +150,7 @@ class ForkMeGitHub extends Controller {
 }
 ```
 
-**Crea el archivo para la vista**.
+**Crea el archivo para la vista**:
 
 	$ nano src/template/view/hello.php
 
@@ -158,7 +158,7 @@ class ForkMeGitHub extends Controller {
 <p class="color">Hello world</p>
 ```
 
-**Finalmente crea el archivo de configuración para poder instalar tu plugin desde Composer**.
+**Finalmente crea el archivo de configuración para poder instalar tu plugin desde Composer**:
 
 	$ nano composer.json
 
