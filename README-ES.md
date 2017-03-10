@@ -23,33 +23,21 @@ La estructura y configuración para crear un módulo básico para [Eliasis PHP F
 
 **Estructura**
 
-· Crea un directorio con el nombre del módulo. Para este ejemplo nuestro módulo se llamará `my-custom-module`:
+- Crea un directorio con el nombre del módulo. Para este ejemplo nuestro módulo se llamará `my-custom-module`:
 
     $ mkdir my-custom-module
 
-· Accede al directorio creado:
+- Accede al directorio creado:
 
     $ cd my-custom-module/
 
-· Crea los directorios del módulo:
+- Crea los directorios del módulo:
 
-/assets/ 			[opcional]
-/assets/js  		[opcional]
-/assets/css 		[opcional]
-
-/config/ 			[opcional]
-
-/src/  				[requerido]
-/src/Model/  		[opcional]
-/src/template/		[opcional]
-/src/template/view/ [opcional]
-/src/Controller/ 	[opcional]
-
-    $ mkdir assets/ assets/css assets/js config/ src/ src/Controller/ src/Model/  src/template/
+    $ mkdir assets/ assets/css config/ src/ src/Controller/ src/template/
 
 **Contenido**
 
-· Crea el archivo de configuración del módulo.
+- Crea el archivo de configuración del módulo.
 
 	$ nano my-custom-module.php 
 
@@ -69,7 +57,7 @@ return [
 ];
 ```
 
-· Añade las rutas o los hooks de tu módulo.
+- Añade las rutas o los hooks de tu módulo.
 
 	$ nano src/Hooks.php 
 
@@ -90,7 +78,6 @@ class Hooks {
         $hooks = [
 
             'css' => $controller . 'MyCustomModule' . '@css',
-
         ];
 
         Hook::addHook($hooks);
@@ -117,7 +104,6 @@ class Routes {
     	$routes = [
 
             '/' => $controller . 'MyCustomModule' . '@render',
-
         ];
 
         Route::addRoute($routes);
@@ -125,7 +111,7 @@ class Routes {
 }
 ```
 
-· Crea el archivo para el controlador principal del módulo.
+- Crea el archivo para el controlador principal del módulo.
 
 	$ nano src/Controller/MyCustomModule.php 
 
@@ -154,7 +140,7 @@ class ForkMeGitHub extends Controller {
 }
 ```
 
-· Crea el archivo para los estilos.
+- Crea el archivo para los estilos.
 
 	$ nano assets/css/style.css
 
@@ -164,7 +150,7 @@ class ForkMeGitHub extends Controller {
 }
 ```
 
-· Crea el archivo para la vista.
+- Crea el archivo para la vista.
 
 	$ nano src/template/view/hello.php
 
@@ -172,7 +158,7 @@ class ForkMeGitHub extends Controller {
 <p class="color">Hello world</p>
 ```
 
-· Finalmente crea el archivo de configuración para poder instalar tu plugin desde Composer.
+- Finalmente crea el archivo de configuración para poder instalar tu plugin desde Composer.
 
 	$ nano composer.json
 
