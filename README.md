@@ -21,23 +21,23 @@
 
 The structure and configuration to create a basic module for [Eliasis PHP Framework](https://github.com/eliasis-framework/eliasis) is the next:
 
-**Skeleton**
+## Skeleton
 
-- Create a directory with the module name. For this example our module will be called `my-custom-module`:
+**Create a directory with the module name. For this example our module will be called `my-custom-module`**:
 
     $ mkdir my-custom-module
 
-- Access the created directory:
+Access the created directory:
 
     $ cd my-custom-module/
 
-- Create the module directories:
+Create the module directories:
 
     $ mkdir assets/ assets/css config/ src/ src/Controller/ src/template/
 
 **Content**
 
-- Create the module configuration file.
+Create the module configuration file.
 
 	$ nano my-custom-module.php 
 
@@ -57,7 +57,7 @@ return [
 ];
 ```
 
-- Add the routes or hooks of your module.
+Add the routes or hooks of your module.
 
 	$ nano src/Hooks.php 
 
@@ -113,7 +113,7 @@ class Routes {
 }
 ```
 
-- Create the main file of the module.
+Create the main file of the module.
 
 	$ nano src/Controller/MyCustomModule.php 
 
@@ -142,7 +142,7 @@ class ForkMeGitHub extends Controller {
 }
 ```
 
-- Create the file for styles.
+Create the file for styles.
 
 	$ nano assets/css/style.css
 
@@ -152,7 +152,7 @@ class ForkMeGitHub extends Controller {
 }
 ```
 
-- Create the view file.
+Create the view file.
 
 	$ nano src/template/view/hello.php
 
@@ -160,7 +160,7 @@ class ForkMeGitHub extends Controller {
 <p class="color">Hello world</p>
 ```
 
-- Finally create the configuration file to be able to install your plugin from Composer.
+Finally create the configuration file to be able to install your plugin from Composer.
 
 	$ nano composer.json
 
