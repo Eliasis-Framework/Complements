@@ -59,56 +59,40 @@ return [
 
 **Añade las rutas o los hooks de tu módulo**:
 
-	$ nano src/Hooks.php 
+    $ nano config/hooks.php 
 
 ```php
 <?php
 
-namespace App\Modules\MyCustomModule;
+use Eliasis\Module\Module;
 
-use Eliasis\Hook\Hook,
-    Eliasis\Module\Module;
+$controller = Module::getNamespace('controller');
 
-class Hooks {
+return [
 
-    public static function add() {
-
-        $controller = Module::MyCustomModule('getNamespace', 'controller');
-
-        $hooks = [
-
-            'css' => $controller . 'MyCustomModule' . '@css',
-        ];
-
-        Hook::addHook($hooks);
-    }
-}
+    'hooks' => [
+        'css'        => $controller . 'MyCustomModule' . '@css',
+        'after-body' => $controller . 'MyCustomModule' . '@render',
+    ],
+];
 ```
 
-	$ nano src/Routes.php 
+    $ nano config/routes.php 
 
 ```php
 <?php
 
-namespace App\Modules\MyCustomModule;
+use Eliasis\Module\Module;
 
-use Eliasis\Route\Route,
-    Eliasis\Module\Module;
+$controller = Module::getNamespace('controller');
 
-class Routes {
+return [
 
-    public static function add() {
+    'routes' => [
 
-        $controller = Module::MyCustomModule('getNamespace', 'controller');
-
-    	$routes = [
-
-            '/' => $controller . 'MyCustomModule' . '@render',
-        ];
-
-        Route::addRoute($routes);
-    }
-}
+        'example' => $controller . 'MyCustomModule' . '@example',
+    ],
+];
 ```
 
 **Crea el archivo para el controlador principal del módulo**:
@@ -118,22 +102,22 @@ class Routes {
 ```php
 <?php
 
-namespace App\Modules\ForkMeGitHub\Controller;
+namespace App\Modules\MyCustomModule\Controller;
 
 use Josantonius\Asset\Asset,
     Eliasis\Module\Module,
     Eliasis\Controller\Controller;
 
-class ForkMeGitHub extends Controller {
+class MyCustomModule extends Controller {
 
     public function css() {
 
-        Asset::css(Module::ForkMeGitHub('getUrl', 'css') . 'style.css');
+        Asset::css(Module::MyCustomModule('getUrl', 'css') . 'style.css');
     }
 
     public function render() {
 
-        $path = Module::ForkMeGitHub('getPath', 'view');
+        $path = Module::MyCustomModule('getPath', 'view');
 
         self::$view->renderizate($path . 'hello');
     }
@@ -170,7 +154,8 @@ class ForkMeGitHub extends Controller {
     "type": "eliasis-module",
     "license": "MIT",
     "require": {
-        "eliasis-framework/installers": "*"
+        "composer/installers": "*",
+        "Josantonius/Asset": "*"
     },
     "autoload": {
         "psr-4": {
