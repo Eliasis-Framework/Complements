@@ -57,6 +57,49 @@ return [
 ];
 ```
 
+**Crear archivo para añadir urls*:
+
+    $ nano config/add-urls.php 
+
+```php
+<?php
+
+use Eliasis\App\App,
+    Eliasis\Module\Module;
+
+$url = App::MODULES_URL() . Module::MyCustomModule('folder');
+
+return [
+
+    'url' => [
+
+        'css'  => $url . 'public' . App::DS . 'css' . App::DS,
+        'view' => $url . 'src' . App::DS . 'template'  . App::DS . 'view' . App::DS,
+    ],
+];
+```
+
+**Crear archivos para añadir namespaces**:
+
+    $ nano config/namespaces.php 
+
+```php
+<?php
+
+$namespace = App::MyCustomApp('namespace', 'modules');
+
+$module = 'MyCustomModule';
+
+return [
+
+    'namespace' => [
+
+        'controller' => $namespace . $module . '\\Controller\\'
+    ],
+];
+
+```
+
 **Añade las rutas o los hooks de tu módulo**:
 
     $ nano config/hooks.php 
@@ -66,13 +109,13 @@ return [
 
 use Eliasis\Module\Module;
 
-$controller = Module::getNamespace('controller');
+$namespace = Module::MyCustomModule('namespace', 'controller');
 
 return [
 
     'hooks' => [
-        'css'        => $controller . 'MyCustomModule' . '@css',
-        'after-body' => $controller . 'MyCustomModule' . '@render',
+        'css'        => $namespace . 'MyCustomModule' . '@css',
+        'after-body' => $namespace . 'MyCustomModule' . '@render',
     ],
 ];
 ```
@@ -84,20 +127,20 @@ return [
 
 use Eliasis\Module\Module;
 
-$controller = Module::getNamespace('controller');
+$namespace = Module::MyCustomModule('namespace', 'controller');
 
 return [
 
     'routes' => [
 
-        'example' => $controller . 'MyCustomModule' . '@example',
+        'example' => $namespace . 'MyCustomModule' . '@example',
     ],
 ];
 ```
 
 **Crea el archivo para el controlador principal del módulo**:
 
-	$ nano src/Controller/MyCustomModule.php 
+    $ nano src/Controller/MyCustomModule.php 
 
 ```php
 <?php
@@ -112,12 +155,12 @@ class MyCustomModule extends Controller {
 
     public function css() {
 
-        Asset::css(Module::MyCustomModule('getUrl', 'css') . 'style.css');
+        Asset::css(Module::MyCustomModule('url', 'css') . 'style.css');
     }
 
     public function render() {
 
-        $path = Module::MyCustomModule('getPath', 'view');
+        $path = Module::MyCustomModule('url', 'view');
 
         self::$view->renderizate($path . 'hello');
     }
@@ -166,15 +209,19 @@ class MyCustomModule extends Controller {
 
 ```
 
-## Contribuir
+### Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
 1. Bifurca la rama del repositorio en GitHub para iniciar la operación de ajuste.
 1. Escribe una o más pruebas para la nueva característica o expón el error.
 1. Haz cambios en el código para implementar la característica o reparar el fallo.
 1. Envía pull request para fusionar los cambios y que sean publicados.
 
-## Copyright
+Esto está pensado para proyectos grandes y de larga duración.
+
+### Copyright
 
 2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
-Si te ha resultado útil... ¡házmelo saber! Sígueme en [Twitter](https://twitter.com/Josantonius).
+Si te ha resultado útil, házmelo saber :wink:
+
+Puedes contactarme en [Twitter](https://twitter.com/Josantonius) o a través de mi [correo electrónico](mailto:hello@josantonius.com).

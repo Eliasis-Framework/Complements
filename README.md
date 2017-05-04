@@ -1,6 +1,6 @@
 # Eliasis PHP Framework modules
 
-[Spanish version](README-ES.md)
+[Versión en español](README-ES.md)
 
 ---
 
@@ -57,6 +57,49 @@ return [
 ];
 ```
 
+**Create file to add urls**:
+
+    $ nano config/add-urls.php 
+
+```php
+<?php
+
+use Eliasis\App\App,
+    Eliasis\Module\Module;
+
+$url = App::MODULES_URL() . Module::MyCustomModule('folder');
+
+return [
+
+    'url' => [
+
+        'css'  => $url . 'public' . App::DS . 'css' . App::DS,
+        'view' => $url . 'src' . App::DS . 'template'  . App::DS . 'view' . App::DS,
+    ],
+];
+```
+
+**Create file to add namespaces**:
+
+    $ nano config/namespaces.php 
+
+```php
+<?php
+
+$namespace = App::MyCustomApp('namespace', 'modules');
+
+$module = 'MyCustomModule';
+
+return [
+
+    'namespace' => [
+
+        'controller' => $namespace . $module . '\\Controller\\'
+    ],
+];
+
+```
+
 **Add the routes or hooks of your module**:
 
 	$ nano config/hooks.php 
@@ -66,13 +109,13 @@ return [
 
 use Eliasis\Module\Module;
 
-$controller = Module::getNamespace('controller');
+$namespace = Module::MyCustomModule('namespace', 'controller');
 
 return [
 
     'hooks' => [
-        'css'        => $controller . 'MyCustomModule' . '@css',
-        'after-body' => $controller . 'MyCustomModule' . '@render',
+        'css'        => $namespace . 'MyCustomModule' . '@css',
+        'after-body' => $namespace . 'MyCustomModule' . '@render',
     ],
 ];
 ```
@@ -84,13 +127,13 @@ return [
 
 use Eliasis\Module\Module;
 
-$controller = Module::getNamespace('controller');
+$namespace = Module::MyCustomModule('namespace', 'controller');
 
 return [
 
     'routes' => [
 
-        'example' => $controller . 'MyCustomModule' . '@example',
+        'example' => $namespace . 'MyCustomModule' . '@example',
     ],
 ];
 ```
@@ -112,12 +155,12 @@ class MyCustomModule extends Controller {
 
     public function css() {
 
-        Asset::css(Module::MyCustomModule('getUrl', 'css') . 'style.css');
+        Asset::css(Module::MyCustomModule('url', 'css') . 'style.css');
     }
 
     public function render() {
 
-        $path = Module::MyCustomModule('getPath', 'view');
+        $path = Module::MyCustomModule('url', 'view');
 
         self::$view->renderizate($path . 'hello');
     }
@@ -166,7 +209,7 @@ class MyCustomModule extends Controller {
 
 ```
 
-## Contribute
+### Contribute
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
 1. Fork the repository on GitHub to start making your changes.
 1. Write one or more tests for the new feature or that expose the bug.
@@ -175,8 +218,10 @@ class MyCustomModule extends Controller {
 
 This is intended for large and long-lived objects.
 
-## Copyright
+### Copyright
 
 2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
-If you found this release useful please let the author know! Follow on [Twitter](https://twitter.com/Josantonius).
+If you find it useful, let me know :wink:
+
+You can contact me on [Twitter](https://twitter.com/Josantonius) or through my [email](mailto:hello@josantonius.com).
