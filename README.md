@@ -14,13 +14,13 @@
 
 ## Available modules
 
-| Module | Description|
+| Module | Description |
 | --- | --- |
 | [fork-me-github](https://github.com/Eliasis-Framework/fork-me-github) | Add a strip 'Fork me on GitHub' at the top of the page. |
 
 ## Developed with Eliasis
 
-| Módulo | Descripción | Tipo
+| Módulo | Description | Type
 | --- | --- | --- |
 | [copy-movie-grifus](https://github.com/Josantonius/Copy-Movie-Grifus.git) | Add a new button in the film pages of the Grifus theme with which you can copy the complete information with a single click. | [WordPress Plugin](https://github.com/Josantonius/Extensions-For-Grifus.git)
 | [custom-images-grifus](https://github.com/Josantonius/Custom-Images-Grifus.git) | Save external IMDB images to your WordPress site. Replaces IMDB rating by your own rating system in Grifus theme. | [WordPress Plugin](https://github.com/Josantonius/Extensions-For-Grifus.git)
