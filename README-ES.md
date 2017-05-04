@@ -5,6 +5,7 @@
 ---
 
 - [Módulos disponibles](#módulos-disponibles)
+- [Desarrollados con Eliasis](#desarrollados-con-eliasis)
 - [Crear módulo](#crear-módulo)
 - [Contribuir](#contribuir)
 - [Copyright](#copyright)
@@ -16,6 +17,14 @@
 | Módulo | Descripción |
 | --- | --- |
 | [fork-me-github](https://github.com/Eliasis-Framework/fork-me-github) | Agrega tira 'Fork me on GitHub' en la parte superior de la página. |
+
+## Desarrollados con Eliasis
+
+| Módulo | Descripción | Tipo
+| --- | --- | --- |
+| [copy-movie-grifus](https://github.com/Josantonius/Copy-Movie-Grifus.git) | Añade un nuevo botón en las páginas de películas del theme Grifus con el que podrás copiar la información completa de la película con un solo click. | [Plugin WordPress](https://github.com/Josantonius/Extensions-For-Grifus.git)
+| [custom-images-grifus](https://github.com/Josantonius/Custom-Images-Grifus.git) | Guardas imágenes externas de IMDB en tu sitio de WordPress. Reemplaza imágenes externas de IMDB y las guarda en tu sitio de WordPress. | [Plugin WordPress](https://github.com/Josantonius/Extensions-For-Grifus.git)
+| [custom-rating-grifus](https://github.com/Josantonius/Custom-Rating-Grifus.git) | Añade un nuevo botón en las páginas de películas del theme Grifus con el que podrás copiar la información completa de la película con un solo click. | [Plugin WordPress](https://github.com/Josantonius/Extensions-For-Grifus.git)
 
 ## Crear módulo
 

@@ -5,6 +5,7 @@
 ---
 
 - [Available modules](#available-modules)
+- [Developed with Eliasis](#developed-with-eliasis)
 - [Create module](#create-module)
 - [Contribute](#contribute)
 - [Copyright](#copyright)
@@ -16,6 +17,14 @@
 | Module | Description|
 | --- | --- |
 | [fork-me-github](https://github.com/Eliasis-Framework/fork-me-github) | Add a strip 'Fork me on GitHub' at the top of the page. |
+
+## Developed with Eliasis
+
+| Módulo | Descripción | Tipo
+| --- | --- | --- |
+| [copy-movie-grifus](https://github.com/Josantonius/Copy-Movie-Grifus.git) | Add a new button in the film pages of the Grifus theme with which you can copy the complete information with a single click. | [WordPress Plugin](https://github.com/Josantonius/Extensions-For-Grifus.git)
+| [custom-images-grifus](https://github.com/Josantonius/Custom-Images-Grifus.git) | Save external IMDB images to your WordPress site. Replaces IMDB rating by your own rating system in Grifus theme. | [WordPress Plugin](https://github.com/Josantonius/Extensions-For-Grifus.git)
+| [custom-rating-grifus](https://github.com/Josantonius/Custom-Rating-Grifus.git) | Replaces IMDB rating by your own rating system in Grifus theme. Replaces the static rating system of the Grifus theme by a dynamic rating system. | [WordPress Plugin](https://github.com/Josantonius/Extensions-For-Grifus.git)
 
 ## Create module
 
