@@ -57,7 +57,7 @@ return [
 ];
 ```
 
-**Crear archivo para añadir urls*:
+**Crear archivo para añadir urls**:
 
     $ nano config/add-urls.php 
 
