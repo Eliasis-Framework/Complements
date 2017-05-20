@@ -52,6 +52,13 @@ The structure and configuration to create a basic module for [Eliasis PHP Framew
 
 ```php
 <?php
+/*
+ * Initial status types:
+ * 
+ * active      → The module will start as active.
+ * inactive    → The module will start as inactive.
+ * uninstalled → The module will start as uninstalled.
+ */
 
 return [
 
@@ -62,7 +69,7 @@ return [
     'author'      => 'Josantonius',
     'author-uri'  => 'https://josantonius.com/',
     'license'     => 'MIT',
-
+    'state'       => 'active',
 ];
 ```
 
@@ -90,7 +97,7 @@ return [
 
 **Create file to add namespaces**:
 
-    $ nano config/namespaces.php 
+    $ nano config/set-namespaces.php 
 
 ```php
 <?php
@@ -109,9 +116,9 @@ return [
 
 ```
 
-**Add the routes or hooks of your module**:
+**Add the routes and/or hooks of your module**:
 
-	$ nano config/hooks.php 
+	$ nano config/set-hooks.php 
 
 ```php
 <?php
@@ -120,11 +127,24 @@ use Eliasis\Module\Module;
 
 $namespace = Module::MyCustomModule('namespace', 'controller');
 
+/**
+ * module-launch  → Optional hook → It runs on each module load.
+ * activation     → Optional hook → It runs when the module is activated.
+ * deactivation   → Optional hook → It runs when the module is deactivated.
+ * installation   → Optional hook → It runs when the module is installed.
+ * uninstallation → Optional hook → It runs when the module is uninstalled.
+ */
+
 return [
 
     'hooks' => [
-        'css'        => $namespace . 'MyCustomModule' . '@css',
-        'after-body' => $namespace . 'MyCustomModule' . '@render',
+        'css'            => $namespace . 'Launcher\\Launcher@css',
+        'after-body'     => $namespace . 'Launcher\\Launcher@render',
+        'module-launch'  => $namespace . 'Launcher\\Launcher@init',
+        'activation'     => $namespace . 'Launcher\\Launcher@activation',
+        'deactivation'   => $namespace . 'Launcher\\Launcher@deactivation',
+        'installation'   => $namespace . 'Launcher\\Launcher@installation',
+        'uninstallation' => $namespace . 'Launcher\\Launcher@uninstallation',
     ],
 ];
 ```
@@ -149,18 +169,43 @@ return [
 
 **Create the main file of the module**:
 
-	$ nano src/Controller/MyCustomModule.php 
+	$ nano src/Controller/Launcher/Launcher.php 
 
 ```php
 <?php
 
-namespace App\Modules\MyCustomModule\Controller;
+namespace App\Modules\MyCustomModule\Controller\Launcher;
 
 use Josantonius\Asset\Asset,
     Eliasis\Module\Module,
     Eliasis\Controller\Controller;
 
-class MyCustomModule extends Controller {
+class Launcher extends Controller {
+
+    public function init() {
+
+        // Actions for when the module is loaded
+    }
+
+    public function activation() {
+
+        // Actions for when the module is activated
+    }
+
+    public function deactivation() {
+
+        // Actions for when the module is deactivated
+    }
+
+    public function installation() {
+
+        // Actions for when the module is install
+    }
+
+    public function uninstallation() {
+
+        // Actions for when the module is uninstall
+    }
 
     public function css() {
 
@@ -207,7 +252,8 @@ class MyCustomModule extends Controller {
     "license": "MIT",
     "require": {
         "composer/installers": "*",
-        "Josantonius/Asset": "*"
+        "Josantonius/Asset": "*",
+        "Eliasis-Framework/Module": "*"
     },
     "autoload": {
         "psr-4": {
