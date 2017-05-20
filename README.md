@@ -89,8 +89,8 @@ return [
 
     'url' => [
 
-        'css'  => $url . 'public' . App::DS . 'css' . App::DS,
-        'view' => $url . 'src' . App::DS . 'template'  . App::DS . 'view' . App::DS,
+        'css'  => $url . 'public' . App::DS . 'css'      . App::DS,
+        'view' => $url . 'src'    . App::DS . 'template' . App::DS . 'view' . App::DS,
     ],
 ];
 ```
