@@ -177,7 +177,6 @@ return [
 namespace App\Modules\MyCustomModule\Controller\Launcher;
 
 use Josantonius\Asset\Asset,
-    Eliasis\Module\Module,
     Eliasis\Controller\Controller;
 
 class Launcher extends Controller {
