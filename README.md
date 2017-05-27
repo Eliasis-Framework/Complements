@@ -57,19 +57,22 @@ The structure and configuration to create a basic module for [Eliasis PHP Framew
  * 
  * active      → The module will start as active.
  * inactive    → The module will start as inactive.
+ * installed   → The module will start as installed.
  * uninstalled → The module will start as uninstalled.
  */
 
 return [
-
-    'name'        => 'MyCustomModule',
+    
+    'id'          => 'MyCustomModule',
+    'name'        => 'My Custom Module',
     'version'     => '1.0.0',
     'description' => 'Custom module for Eliasis PHP Framework',
+    'state'       => 'active',
+    'category'    => 'extensions'
     'uri'         => 'https://github.com/Eliasis-Framework/my-custom-module',
     'author'      => 'Josantonius',
     'author-uri'  => 'https://josantonius.com/',
     'license'     => 'MIT',
-    'state'       => 'active',
 ];
 ```
 
@@ -128,7 +131,7 @@ use Eliasis\Module\Module;
 $namespace = Module::MyCustomModule('namespace', 'controller');
 
 /**
- * module-launch  → Optional hook → It runs on each module load.
+ * module-load    → Optional hook → It runs on each module load.
  * activation     → Optional hook → It runs when the module is activated.
  * deactivation   → Optional hook → It runs when the module is deactivated.
  * installation   → Optional hook → It runs when the module is installed.
@@ -140,7 +143,7 @@ return [
     'hooks' => [
         'css'            => $namespace . 'Launcher\\Launcher@css',
         'after-body'     => $namespace . 'Launcher\\Launcher@render',
-        'module-launch'  => $namespace . 'Launcher\\Launcher@init',
+        'module-load'    => $namespace . 'Launcher\\Launcher@init',
         'activation'     => $namespace . 'Launcher\\Launcher@activation',
         'deactivation'   => $namespace . 'Launcher\\Launcher@deactivation',
         'installation'   => $namespace . 'Launcher\\Launcher@installation',
