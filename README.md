@@ -105,13 +105,13 @@ return [
 ```php
 <?php
 
-$namespace = App::MyCustomApp('namespace', 'modules');
+$namespace = App::MyCustomApp('namespaces', 'modules');
 
 $module = 'MyCustomModule';
 
 return [
 
-    'namespace' => [
+    'namespaces' => [
 
         'controller' => $namespace . $module . '\\Controller\\'
     ],
@@ -128,7 +128,7 @@ return [
 
 use Eliasis\Module\Module;
 
-$namespace = Module::MyCustomModule('namespace', 'controller');
+$namespace = Module::MyCustomModule('namespaces', 'controller');
 
 /**
  * module-load    → Optional hook → It runs on each module load.
@@ -159,7 +159,7 @@ return [
 
 use Eliasis\Module\Module;
 
-$namespace = Module::MyCustomModule('namespace', 'controller');
+$namespace = Module::MyCustomModule('namespaces', 'controller');
 
 return [
 
