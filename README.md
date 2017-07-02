@@ -21,6 +21,7 @@
 | [wp-plugin-rating](https://github.com/Josantonius/WP_Plugin-Rating) | Show plugin rating in WordPress administration pages for plugins developed with Eliasis Framework. | [WordPress Plugin](https://github.com/Josantonius/WP_Plugin-Rating)
 | [eliasis-plugin-skeleton](https://github.com/Eliasis-Framework/WordPress-Plugin) | A skeleton for creating WordPress plugins with Eliasis Framework. | [WordPress Plugin](https://github.com/Eliasis-Framework/WordPress-Plugin)
 | [fork-me-github](https://github.com/Eliasis-Framework/fork-me-github) | Add a strip 'Fork me on GitHub' at the top of the page. | [Eliasis module](https://github.com/Eliasis-Framework/Eliasis)
+| [request](https://github.com/Eliasis-Framework/request) | Saves information about requests in the database. | [Eliasis module](https://github.com/Eliasis-Framework/Eliasis)
 
 ### Contribute
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
