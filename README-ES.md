@@ -22,6 +22,7 @@
 | [eliasis-plugin-skeleton](https://github.com/Eliasis-Framework/WordPress-Plugin) | Estructura para crear plugins WordPress con Eliasis Framework. | [WordPress Plugin](https://github.com/Eliasis-Framework/WordPress-Plugin)
 | [fork-me-github](https://github.com/Eliasis-Framework/fork-me-github) | Agrega tira 'Fork me on GitHub' en la parte superior de la página. | [Eliasis module](https://github.com/Eliasis-Framework/Eliasis)
 | [request](https://github.com/Eliasis-Framework/request) | Guarda información sobre las peticiones en la base de datos. | [Eliasis module](https://github.com/Eliasis-Framework/Eliasis)
+| [license-handler](https://bitbucket.org/eliasis-framework/license-handler) | Gestor de licencias y aplicaciones. | [Eliasis module](https://github.com/Eliasis-Framework/Eliasis)
 
 ### Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
