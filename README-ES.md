@@ -1,4 +1,4 @@
-# Módulos para Eliasis PHP Framework
+# Complementos para Eliasis PHP Framework
 
 [English version](README-ES.md)
 
@@ -11,6 +11,9 @@
 ---
 
 ## Desarrollados con Eliasis
+| Plugin | Descripción | Tipo
+| --- | --- | --- |
+| [wp-plugin-info](https://github.com/Josantonius/WP_Plugin-Info) | Obtener y guardar información de plugins a través de la API de WordPress para ser consumida por otros módulos. | [WordPress Plugin](https://github.com/Josantonius/WP_Plugin-Info)
 
 | Módulo | Descripción | Tipo
 | --- | --- | --- |
