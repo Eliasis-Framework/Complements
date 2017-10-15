@@ -5,7 +5,7 @@
 ---
 
 - [Componentes](#componentes)
-- [Módulos](#modulos)
+- [Módulos](#módulos)
 - [Plugins](#plugins)
 - [Contribuir](#contribuir)
 - [Copyright](#copyright)
