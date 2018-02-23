@@ -4,10 +4,10 @@
 
 ---
 
-- [Components](https://eliasis-framework.github.io/Complement/v1.1.1/lang/en/#developed-components)
-- [Modules](https://eliasis-framework.github.io/Complement/v1.1.1/lang/en/#developed-modules)
-- [Plugins](https://eliasis-framework.github.io/Complement/v1.1.1/lang/en/#developed-plugins)
-- [Templates](https://eliasis-framework.github.io/Complement/v1.1.1/lang/en/#developed-templates)
+- [Components](https://eliasis-framework.github.io/complement/v1.1.1/lang/en/#developed-components)
+- [Modules](https://eliasis-framework.github.io/complement/v1.1.1/lang/en/#developed-modules)
+- [Plugins](https://eliasis-framework.github.io/complement/v1.1.1/lang/en/#developed-plugins)
+- [Templates](https://eliasis-framework.github.io/complement/v1.1.1/lang/en/#developed-templates)
 
 ---
 
